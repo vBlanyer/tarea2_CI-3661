@@ -12,3 +12,6 @@ prelacion_directa(X, Y) :- prela(X, Y).
 % Regla: prelacion_total (∀x∣x∈Materia(x):(∀z∣z∈Materia(z):(∀y∣y∈Materia(y):((Prela(x,z)∧Prela(z,y)) → Prela(x,y)))))
 prelacion_total(X, Y) :- prelacion_directa(X, Y).
 prelacion_total(X, Y) :- prelacion_directa(X, Z), prelacion_total(Z, Y).
+
+% 1. Relacion directa, true si simplemente esta la definicion
+% 2. Primero cubro la base de que la prelacion sea directa, y luego la recursion de prelaciones, de manera transitiva.
