@@ -9,7 +9,6 @@ prela(ma1111, ci2525).
 % Regla: prelacion_directa
 prelacion_directa(X, Y) :- prela(X, Y).
 
-
 % Regla: prelacion_total (∀x∣x∈Materia(x):(∀z∣z∈Materia(z):(∀y∣y∈Materia(y):((Prela(x,z)∧Prela(z,y)) → Prela(x,y)))))
 prelacion_total(X, Y) :- prelacion_directa(X, Y).
 prelacion_total(X, Y) :- prelacion_directa(X, Z), prelacion_total(Z, Y).
